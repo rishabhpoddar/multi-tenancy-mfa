@@ -7,6 +7,7 @@ import UserRoles from "supertokens-node/recipe/userroles";
 import AccountLinking from "supertokens-node/recipe/accountlinking"
 import MultiFactorAuth from "supertokens-node/recipe/multifactorauth"
 import TOTP from "supertokens-node/recipe/totp";
+import EmailVerification from "supertokens-node/recipe/emailverification"
 
 export function getApiDomain() {
     const apiPort = process.env.REACT_APP_API_PORT || 3001;
@@ -52,5 +53,8 @@ export const SuperTokensConfig: TypeInput = {
         }),
         MultiFactorAuth.init(),
         TOTP.init(),
+        EmailVerification.init({
+            mode: "REQUIRED"
+        }),
     ],
 };

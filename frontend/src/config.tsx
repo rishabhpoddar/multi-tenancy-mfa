@@ -7,6 +7,8 @@ import Multitenancy from "supertokens-auth-react/recipe/multitenancy";
 import TOTP from "supertokens-auth-react/recipe/totp";
 import { TOTPPreBuiltUI } from "supertokens-auth-react/recipe/totp/prebuiltui"
 import MultiFactorAuth from "supertokens-auth-react/recipe/multifactorauth"
+import EmailVerification from "supertokens-auth-react/recipe/emailverification"
+import { EmailVerificationPreBuiltUI } from "supertokens-auth-react/recipe/emailverification/prebuiltui"
 
 export function getApiDomain() {
     const apiPort = process.env.REACT_APP_API_PORT || 3001;
@@ -67,6 +69,9 @@ export const SuperTokensConfig = {
         }),
         TOTP.init(),
         MultiFactorAuth.init(),
+        EmailVerification.init({
+            mode: "REQUIRED"
+        })
     ],
 };
 
@@ -74,4 +79,4 @@ export const recipeDetails = {
     docsLink: "https://supertokens.com/docs/multitenancy/introduction",
 };
 
-export const PreBuiltUIList = [ThirdPartyEmailPasswordPreBuiltUI, ThirdPartyPasswordlessPreBuiltUI, TOTPPreBuiltUI];
+export const PreBuiltUIList = [ThirdPartyEmailPasswordPreBuiltUI, ThirdPartyPasswordlessPreBuiltUI, TOTPPreBuiltUI, EmailVerificationPreBuiltUI];

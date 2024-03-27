@@ -4,6 +4,9 @@ import Session from "supertokens-node/recipe/session";
 import { TypeInput } from "supertokens-node/types";
 import Dashboard from "supertokens-node/recipe/dashboard";
 import UserRoles from "supertokens-node/recipe/userroles";
+import AccountLinking from "supertokens-node/recipe/accountlinking"
+import MultiFactorAuth from "supertokens-node/recipe/multifactorauth"
+import TOTP from "supertokens-node/recipe/totp";
 
 export function getApiDomain() {
     const apiPort = process.env.REACT_APP_API_PORT || 3001;
@@ -39,5 +42,15 @@ export const SuperTokensConfig: TypeInput = {
         Session.init(),
         Dashboard.init(),
         UserRoles.init(),
+        AccountLinking.init({
+            shouldDoAutomaticAccountLinking: async () => {
+                return {
+                    shouldAutomaticallyLink: true,
+                    shouldRequireVerification: true
+                }
+            }
+        }),
+        MultiFactorAuth.init(),
+        TOTP.init(),
     ],
 };

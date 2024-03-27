@@ -7,10 +7,24 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
 --header 'Content-Type: application/json' \
 --header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
 --data-raw '{
+    "tenantId": "public",
+    "emailPasswordEnabled": true,
+    "thirdPartyEnabled": false,
+    "passwordlessEnabled": true,
+    "firstFactors": ["emailpassword"],
+    "requiredSecondaryFactors": ["otp-email"]
+}'
+
+curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
+--header 'Content-Type: application/json' \
+--header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--data-raw '{
     "tenantId": "tenant1",
     "emailPasswordEnabled": true,
     "thirdPartyEnabled": true,
-    "passwordlessEnabled": false
+    "passwordlessEnabled": false,
+    "firstFactors": ["emailpassword", "thirdparty"],
+    "requiredSecondaryFactors": ["totp"]
 }'
 
 curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/tenant1/recipe/multitenancy/config/thirdparty' \
@@ -40,7 +54,8 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
     "tenantId": "tenant2",
     "emailPasswordEnabled": true,
     "thirdPartyEnabled": false,
-    "passwordlessEnabled": false
+    "passwordlessEnabled": false,
+    "firstFactors": ["emailpassword"]
 }'
 
 curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
@@ -50,7 +65,8 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
     "tenantId": "tenant3",
     "emailPasswordEnabled": false,
     "thirdPartyEnabled": true,
-    "passwordlessEnabled": true
+    "passwordlessEnabled": true,
+    "firstFactors": ["thirdparty", "otp-email"]
 }'
 
 

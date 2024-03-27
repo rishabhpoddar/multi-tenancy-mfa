@@ -1,3 +1,21 @@
+# Multi tenancy with MFA example
+
+This app contains the following tenants with their authentication methods:
+- Public tenant: Email password as first factor with OTP email as second factor
+- Tenant 1: Google workspaces or email password as first factor with TOTP as second factor
+- Tenant 2: Email password, with no second factor
+- Tenant 3: GitHub or OTP email as first factor, with no second factor
+
+
+## Running the example
+
+```
+npm install
+npm run start
+```
+
+This will start the React app on `http://localhost:3000` and the Node Express server on `http://localhost:3001`.
+
 ## cURL commands to create and configure tenants
 
 This project relies on certain tenants to be created in the SuperTokens core. Below are the curl commands to create and configure the tenants.

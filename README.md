@@ -16,6 +16,11 @@ npm run start
 
 This will start the React app on `http://localhost:3000` and the Node Express server on `http://localhost:3001`.
 
+## TODO:
+- Export list of users
+- Multiple frontends, same backend
+- Security writeup
+
 ## cURL commands to create and configure tenants
 
 This project relies on certain tenants to be created in the SuperTokens core. Below are the curl commands to create and configure the tenants.

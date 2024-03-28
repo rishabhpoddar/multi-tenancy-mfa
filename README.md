@@ -50,9 +50,9 @@ There are two ways to see this list:
 This project relies on certain tenants to be created in the SuperTokens core. Below are the curl commands to create and configure the tenants.
 
 ```bash
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
     "tenantId": "public",
     "emailPasswordEnabled": true,
@@ -62,9 +62,9 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
     "requiredSecondaryFactors": ["otp-email"]
 }'
 
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
     "tenantId": "tenant1",
     "emailPasswordEnabled": true,
@@ -74,9 +74,9 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
     "requiredSecondaryFactors": ["totp"]
 }'
 
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/tenant1/recipe/multitenancy/config/thirdparty' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/tenant1/recipe/multitenancy/config/thirdparty' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
   "config": {
     "thirdPartyId": "google-workspaces",
@@ -94,9 +94,9 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
 }'
 
 
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
     "tenantId": "tenant2",
     "emailPasswordEnabled": true,
@@ -105,9 +105,9 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
     "firstFactors": ["emailpassword"]
 }'
 
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
     "tenantId": "tenant3",
     "emailPasswordEnabled": false,
@@ -117,9 +117,9 @@ curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529
 }'
 
 
-curl --location --request PUT 'https://st-dev-56a99940-ebfe-11ee-8c0b-b794a0d529eb.aws.supertokens.io/tenant3/recipe/multitenancy/config/thirdparty' \
+curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/tenant3/recipe/multitenancy/config/thirdparty' \
 --header 'Content-Type: application/json' \
---header 'api-key: rcnRppf7FlY-lKCTvUS39ZGQxW' \
+--header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
   "config": {
     "thirdPartyId": "github",

@@ -16,10 +16,34 @@ npm run start
 
 This will start the React app on `http://localhost:3000` and the Node Express server on `http://localhost:3001`.
 
-## TODO:
-- Export list of users
-- Multiple frontends, same backend
-- Security writeup
+## Exporting list of users per tenant
+There are two ways to see this list:
+- You can view the list of users per tenant on the [user management dashboard](https://supertokens.com/docs/userdashboard/users-listing-and-details)
+- You can call the [user pagination API / function](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/user-pagination) to get the list of users per tenant and then convert them to any format you like.
+
+## Multiple frontends with the same backend
+[This document](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/multiple-clients) shows you how you can configure the `origin` value dynamically on the backend based on the request's host header. This will automatically set the right cookie config so that the session tokens work correctly. One point to note is that if you want to use cookie based sessions and have the frontend be on a different base domain than the backend, then browsers like safari won't allow setting of cookies (since they reject third party cookies). To solve this, you would need to setup a CNAME in your DNS for your backend for each of the frontends such that the backend domain that that frontend queries is in the same base domain (example.com queries api.example.com). Alternatively, you could just use [header based sessions](https://supertokens.com/docs/session/common-customizations/sessions/token-transfer-method).
+
+## Security
+
+### Login security
+- [Customizable password policy](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/signup-form/field-validators#changing-the-default-email-and-password-validators)
+- Support for [Argon2 password hashing algorithm](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/password-hashing/argon2)
+- Prevent [account takeover risk if enabled automatic account linking](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/account-linking/security-considerations)
+- MFA via TOTP or email / sms OTP.
+- Allowing you to add custom logic for implementing dynamic MFA based on risk score.
+- TOTP rate limiting and account lockout for 15 mins after 5 failed attempts (configurable).
+- Configurable password reset / email verification link / passwordless OTP / link lifetimes.
+- Flexibility to allow you to use any third party / custom logic for spam detection, rate limiting, DDos protection.
+
+### Session security:
+- [Rotating refresh tokens for session theft detection](https://supertokens.com/docs/session/introduction#overview-of-session-flow)
+- [Configurable session lifetime](https://supertokens.com/docs/session/common-customizations/sessions/change-session-timeout)
+- [Automatic anti-csrf protection](https://supertokens.com/docs/session/common-customizations/sessions/anti-csrf)
+- Use of HttpOnly, secure cookies to store session tokens.
+- [Automatic signing key rotation](https://supertokens.com/docs/session/common-customizations/sessions/jwt-signing-key-rotation)
+- [Access token blacklisting](https://supertokens.com/docs/session/common-customizations/sessions/access-token-blacklisting)
+
 
 ## cURL commands to create and configure tenants
 

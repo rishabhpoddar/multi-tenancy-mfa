@@ -50,7 +50,7 @@ There are two ways to see this list:
 This project relies on certain tenants to be created in the SuperTokens core. Below are the curl commands to create and configure the tenants.
 
 ```bash
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'http://localhost:3567/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
@@ -62,7 +62,7 @@ curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d
     "requiredSecondaryFactors": ["otp-email"]
 }'
 
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'http://localhost:3567/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
@@ -74,7 +74,7 @@ curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d
     "requiredSecondaryFactors": ["totp"]
 }'
 
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/tenant1/recipe/multitenancy/config/thirdparty' \
+curl --location --request PUT 'http://localhost:3567/tenant1/recipe/multitenancy/config/thirdparty' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
@@ -94,7 +94,7 @@ curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d
 }'
 
 
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'http://localhost:3567/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
@@ -105,7 +105,7 @@ curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d
     "firstFactors": ["emailpassword"]
 }'
 
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/recipe/multitenancy/tenant' \
+curl --location --request PUT 'http://localhost:3567/recipe/multitenancy/tenant' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{
@@ -117,7 +117,7 @@ curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d
 }'
 
 
-curl --location --request PUT 'https://st-dev-30506dd0-ed09-11ee-ad01-1fdc88939d81.aws.supertokens.io/tenant3/recipe/multitenancy/config/thirdparty' \
+curl --location --request PUT 'http://localhost:3567/tenant3/recipe/multitenancy/config/thirdparty' \
 --header 'Content-Type: application/json' \
 --header 'api-key: etb03yacD9WnwIC22o=MEy4J0V' \
 --data-raw '{

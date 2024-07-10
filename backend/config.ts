@@ -42,7 +42,18 @@ export const SuperTokensConfig: TypeInput = {
             flowType: "USER_INPUT_CODE_AND_MAGIC_LINK",
         }),
         Session.init(),
-        Dashboard.init(),
+        Dashboard.init({
+            override: {
+                functions: (oI) => {
+                    return {
+                        ...oI,
+                        getDashboardBundleLocation: async (input) => {
+                            return "http://localhost:3002"
+                        },
+                    }
+                }
+            }
+        }),
         UserRoles.init(),
         AccountLinking.init({
             shouldDoAutomaticAccountLinking: async () => {

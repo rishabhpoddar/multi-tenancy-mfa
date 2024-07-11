@@ -38,7 +38,7 @@ export const SuperTokensConfig: TypeInput = {
         EmailPassword.init(),
         ThirdParty.init(),
         Passwordless.init({
-            contactMethod: "EMAIL",
+            contactMethod: "EMAIL_OR_PHONE",
             flowType: "USER_INPUT_CODE_AND_MAGIC_LINK",
         }),
         Session.init(),

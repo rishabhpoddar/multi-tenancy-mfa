@@ -43,7 +43,7 @@ export const SuperTokensConfig = {
     recipeList: [
         EmailPassword.init(),
         Passwordless.init({
-            contactMethod: "EMAIL",
+            contactMethod: "EMAIL_OR_PHONE",
         }),
         ThirdParty.init(),
         Session.init({
